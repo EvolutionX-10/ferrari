@@ -117,7 +117,7 @@ nav {
 }
 
 span {
-	transition: transform 1s cubic-bezier(.71, .44, .13, .83), background 1.2s cubic-bezier(.71, .44, .13, .83);
+	transition: transform 1s cubic-bezier(.71, .44, .13, .83), background 1s cubic-bezier(.71, .44, .13, .83);
 }
 
 .opened>.top {
