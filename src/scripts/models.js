@@ -52,20 +52,20 @@ cars.forEach((car, i) => {
 	section.innerHTML += `<div class="flip-card">
 	<div class="flip-card-inner">
 		<div class="flip-card-front">
-			<img src="assets/models/car${i + 1}.webp" alt="" class="car car${i + 1}">
+			<img src="src/assets/models/car${i + 1}.webp" alt="" class="car car${i + 1}">
 		</div>
 		<div class="flip-card-back">
 			<h3>${car.name}</h3>
 			<div class="details">
 				<div class="engine inner_details">
-					<img src="assets/icons/engine.svg" alt="" height="70">
+					<img src="src/assets/icons/engine.svg" alt="" height="70">
 					<div class="innertext">
 						Engine
 						<span>${car.engine}</span>
 					</div>
 				</div>
 				<div class="speed inner_details">
-					<img src="assets/icons/speed.svg" alt="" height="55">
+					<img src="src/assets/icons/speed.svg" alt="" height="55">
 					<div class="innertext">
 						Top Speed
 						<span>${car.topSpeed}kmph</span>
