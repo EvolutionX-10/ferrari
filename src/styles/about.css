@@ -1,0 +1,44 @@
+body {
+	background-image: url(../assets/logo.webp);
+	background-size: 110%;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	backdrop-filter: blur(8px);
+}
+
+.wrapper {
+	color: white;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	height: 95vh;
+}
+
+.about {
+	margin-left: 20vh;
+	margin-right: 10vh;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 1.4em;
+	font-family: 'Body';
+	background: linear-gradient(270deg, transparent 1%, black 50%, black 99%, rgb(255, 0, 0) 100%);
+}
+
+.about:nth-child(even) {
+	background: linear-gradient(90deg, transparent 1%, black 50%, black 99%, rgb(255, 0, 0) 100%);
+}
+
+
+@media (max-width: 40rem) {
+	.wrapper {
+		gap: 20px;
+	}
+	.about {
+		font-size: .8em;
+		margin-right: 1vh;
+		margin-left: 1vh;
+	}
+}

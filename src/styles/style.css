@@ -1,0 +1,418 @@
+@font-face {
+	font-family: 'Ferro';
+	src: url(../assets/fonts/FerroRosso.ttf);
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url(../assets/fonts/Rubik-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'Body';
+	src: url(../assets/fonts/Ferrari-SansRegular.woff);
+	font-display: swap;
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	margin: 0;
+	background: black;
+	height: 100vh;
+	background: rgb(202, 202, 202);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+#loading {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	z-index: 99;
+}
+
+#loading-image {
+	z-index: 100;
+	animation: load 0.5s ease-in-out alternate infinite;
+}
+
+a[href] {
+	text-decoration: none;
+	color: inherit;
+}
+
+header {
+	width: 100%;
+}
+
+nav {
+	display: flex;
+	width: 100%;
+	min-height: 40px;
+	justify-content: space-between;
+	font-family: sans-serif;
+	position: relative;
+	font-size: .9rem;
+	z-index: 10;
+	background: white;
+}
+
+.links {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 30px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+
+.links>a {
+	position: relative;
+	margin: auto;
+}
+
+.links>a:hover::after, a[href="#"]::after {
+	content: '';
+	background: black;
+	width: 45px;
+	height: 3px;
+	border-radius: 10px;
+	position: absolute;
+	bottom: -5px;
+	left: 0px;
+	animation: slideIn 0.5s cubic-bezier(.66, .46, 0, .97);
+}
+
+.links>a:nth-child(3):hover::after, a[href="#"]:nth-child(3)::after {
+	width: 50px;
+}
+
+.links>a:nth-child(4):hover::after, a[href="#"]:nth-child(4)::after {
+	width: 60px;
+}
+
+.hamburger {
+	width: 20px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 20px;
+	cursor: pointer;
+}
+
+.hamburger>span {
+	width: 20px;
+	background: black;
+	height: 2px;
+}
+
+span {
+	transition: transform 1s cubic-bezier(.71, .44, .13, .83), background 1.2s cubic-bezier(.71, .44, .13, .83);
+}
+
+.opened>.top {
+	transform: translate(-10%, 250%) rotate(45deg);
+}
+
+.opened>.mid {
+	background: transparent;
+}
+
+.opened>.bot {
+	transform: translate(-10%, -300%) rotate(135deg);
+}
+
+.logo {
+	position: absolute;
+	left: 48%;
+	margin-left: 10px;
+	margin-top: 2px;
+	height: 40px;
+	cursor: pointer;
+}
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.carousel {
+	display: flex;
+	height: 94vh;
+	width: 100%;
+	z-index: 1;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel>.img {
+	width: 25%;
+	object-fit: cover;
+	z-index: -1;
+	position: relative;
+	filter: brightness(80%);
+	transition: all .5s ease-in-out;
+}
+
+.carousel>.img:hover {
+	scale: 0.98;
+	outline: 6px solid red;
+}
+
+.hidden {
+	display: none;
+}
+
+.text {
+	color: white;
+	font-size: 6em;
+	text-shadow: 5px 5px 20px black;
+	left: 10%;
+	top: 10%;
+	text-transform: uppercase;
+	font-family: 'Body';
+	position: absolute;
+}
+
+.img {
+	color: white;
+	background-size: cover;
+	display: grid;
+	align-items: end;
+	justify-content: center;
+	padding-bottom: 100px;
+}
+
+.img1 {
+	background-image: url(../assets/img1.webp);
+	background-position: center;
+}
+
+.img2 {
+	background-image: url(../assets/nimg2.webp);
+	background-position: center;
+}
+
+.img3 {
+	background-image: url(../assets/img5.webp);
+}
+
+.img4 {
+	background-image: url(../assets/ferrari-sf-23.webp);
+	background-position: 42%;
+}
+
+.info {
+	font-size: 40px;
+	font-family: 'Ferro';
+	animation: pop .5s ease-in-out;
+}
+
+.info>span {
+	font-family: 'Rubik';
+	display: block;
+	font-size: medium;
+	color: ivory;
+}
+
+
+footer {
+	display: flex;
+	background: #181818;
+	width: 100%;
+	min-height: 400px;
+	color: white;
+	align-items: flex-start;
+	padding-top: 100px;
+	justify-content: space-around;
+	position: relative;
+	font-family: 'Body';
+}
+
+.socials {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.socials>a::before {
+	content: '';
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	position: absolute;
+	transform: translate(-120%, -10%);
+
+}
+
+.socials>a:nth-child(1)::before {
+	background-image: url(../assets/icons/facebook.avif);
+}
+
+.socials>a:nth-child(2)::before {
+	background-image: url(../assets/icons/instagram.avif);
+}
+
+.socials>a:nth-child(3)::before {
+	background-image: url(../assets/icons/linkedin.avif);
+}
+
+.socials>a:nth-child(4)::before {
+	background-image: url(../assets/icons/youtube.avif);
+}
+
+.line {
+	position: absolute;
+	bottom: 60%;
+	width: 90%;
+	height: 1px;
+	border-radius: 10px;
+	background: rgb(127, 127, 127);
+}
+
+p {
+	position: absolute;
+	bottom: 20%;
+	text-align: center;
+	line-height: 20px;
+	font-size: 10px;
+	width: 85%;
+	color: grey;
+}
+
+.mnavbar {
+	width: 100vw;
+	position: absolute;
+	height: 95vh;
+	left: 0;
+	top: 100%;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	background: black;
+	align-items: center;
+	animation: pop 1s cubic-bezier(0, .54, 0, 1);
+}
+
+.mnavbar_text {
+	color: white !important;
+	padding: 30px;
+	font-family: 'Body';
+	text-transform: uppercase;
+}
+
+@media (max-width: 40rem) {
+	nav>div>a {
+		display: none;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.logo {
+		left: 43%;
+	}
+
+	.carousel {
+		flex-direction: column;
+		justify-content: stretch;
+	}
+
+	.carousel>.img {
+		width: 100%;
+		height: 40rem;
+		padding-bottom: 10px;
+		filter: brightness(100%);
+	}
+
+	.carousel>.img:hover {
+		outline: none;
+	}
+
+	.hidden {
+		display: block;
+	}
+
+	.img3 {
+		background-position: center;
+	}
+
+	.img1 {
+		background-position-y: 70%;
+	}
+
+	.text {
+		font-size: 1.5em;
+		left: 12%;
+		top: 0;
+	}
+
+	footer {
+		height: 500px;
+		padding-top: 20px;
+	}
+
+	.socials {
+		font-size: 10px;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.socials>a {
+		padding: 20px;
+		transform: translateX(18%);
+	}
+
+	.line {
+		top: 30%;
+	}
+
+	p {
+		bottom: 5%;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform: scaleX(0%);
+	}
+
+	to {
+		transform: scaleX(100%);
+	}
+}
+
+@keyframes pop {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes load {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
