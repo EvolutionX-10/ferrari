@@ -54,6 +54,9 @@ a[href] {
 
 header {
 	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 50;
 }
 
 nav {
@@ -79,6 +82,7 @@ nav {
 .links>a {
 	position: relative;
 	margin: auto;
+	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .links>a:hover::after, a[href="#"]::after {
@@ -99,6 +103,14 @@ nav {
 
 .links>a:nth-child(4):hover::after, a[href="#"]:nth-child(4)::after {
 	width: 60px;
+}
+
+a[href="#"]:hover {
+	color: orange;
+}
+
+a[href="#"]:hover::after {
+	background: orange
 }
 
 .hamburger {
